@@ -1,6 +1,7 @@
 import $ from 'jquery';
 
-export default function addCopyCodeLabel() {
+export default function addCopyCodeLabel()
+{
     if (navigator.clipboard) {
         let blocks = $("pre[class*=allow_copy]");
         blocks.each(function () {
@@ -17,7 +18,8 @@ export default function addCopyCodeLabel() {
         });
     }
 
-    async function copyCode(event) {
+    async function copyCode(event)
+    {
         const button = $(event.target);
         const pre = button.parent();
         let code = pre.find("code");

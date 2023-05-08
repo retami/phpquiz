@@ -1,7 +1,7 @@
 import $ from 'jquery';
 
-export default function addBurgerToggle() {
-
+export default function addBurgerToggle()
+{
     const hamburger = $("#burger");
     hamburger.click(function (e) {
         let open = e.target.dataset.open;

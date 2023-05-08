@@ -1,4 +1,5 @@
-export default function addDarkModeToggle() {
+export default function addDarkModeToggle()
+{
     let storedTheme = localStorage.getItem('theme') || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
     if (storedTheme) {
         document.documentElement.setAttribute('data-theme', storedTheme)
