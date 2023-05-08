@@ -12,8 +12,7 @@ class A
 
         var_dump($obj);
         if (!isset($obj)) {
-            $new = new stdclass;
-            // Assign a reference to the static variable
+            $new = new stdClass();
             $obj = &$new;
         }
     }
