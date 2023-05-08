@@ -25,5 +25,6 @@ echo 0x8000000000000000 . PHP_EOL;
 // 9223372036854775807
 // 9.2233720368548E+18
 // --
+// --
 // www.php.net/manual/de/function.dechex.php
 // www.php.net/manual/de/language.types.integer.php

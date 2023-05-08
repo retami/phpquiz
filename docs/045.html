@@ -380,12 +380,10 @@ output($object);</code></pre>
 <div class="tags-wrap" style="display: none;">
     <pre><code class="language-plaintext nohljsln">abcabc
 Fatal error: Uncaught TypeError: output(): Argument #1 ($it) must be of type Traversable|array, stdClass given (...) on line 19</code></pre>
-            <p>
             <p><code>Iterable</code> is a built-in compile time type alias for <code>array|Traversable</code>.<br />
  Prior to PHP 8.2 it was a <em>pseudo-type</em>.<br />
  The <code>Traversable</code> interface shows if a class is traversable using <code>foreach</code> and can be used with <code>yield from</code> within a generator.<br />
  It cannot be implemented alone. Instead, it must be implemented by either <code>IteratorAggregate</code> or <code>Iterator</code>.</p>
-        </p>
                 <p>
             Source:<br/>
             <a href="https://www.php.net/manual/de/language.types.iterable.php#language.types.iterable">www.php.net/manual/de/language.types.iterable.php#language.types.iterable</a><br/>        </p>

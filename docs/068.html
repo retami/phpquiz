@@ -375,7 +375,6 @@ var_dump($greeting());</code></pre>
 <div class="tags-wrap" style="display: none;">
     <pre><code class="language-plaintext nohljsln">string(11) "Hello Alice"
 string(9) "Hello Bob"</code></pre>
-            <p>
             <p>The first function uses <em>by-value</em> binding:<br />
  - It is not possible to modify the value in the outer scope.<br />
  - The value of the inherited variable is from when the function is defined, not when called.<br />
@@ -383,7 +382,6 @@ string(9) "Hello Bob"</code></pre>
  The second function uses <em>by-reference</em> binding:<br />
  - It is possible to modify the value of the bound variable in the outer scope.<br />
  - The value of the inherited variable is from when the function is called.</p>
-        </p>
                 <p>
             Source:<br/>
             <a href="https://www.php.net/manual/en/functions.anonymous.php">www.php.net/manual/en/functions.anonymous.php</a><br/>        </p>

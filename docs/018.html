@@ -399,12 +399,10 @@ function j(): int|null|false {
  h: correct since PHP 8.0<br />
  i: correct since PHP 8.2 - prior: <code>null|false</code> is not allowed (although they can be part of other union types)<br />
  j: correct since PHP 8.0</p>
-            <p>
             <p>In PHP 8.0 and 8.1 <code>null</code> and <code>false</code> can´t be used as standalone types.<br />
  They can be part of a union type (however <code>null|false</code> is not allowed).<br />
 <br />
  Since PHP 8.2 they can be used as standalone types, can be part of a union type and <code>null|false</code> is allowed.</p>
-        </p>
                 <p>
             Source:<br/>
             <a href="https://php.watch/versions/8.0/union-types">php.watch/versions/8.0/union-types</a><br/><a href="https://php.watch/versions/8.2/null-false-types">php.watch/versions/8.2/null-false-types</a><br/><a href="https://php.watch/versions/8.2/true-type">php.watch/versions/8.2/true-type</a><br/>        </p>
