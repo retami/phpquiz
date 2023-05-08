@@ -4,9 +4,7 @@
 <div class="tags-wrap" style="display: none;">
     {{ question_card.answer|raw }}
     {% if question_card.explanation != '' %}
-        <p>
-            {{ question_card.explanation|raw }}
-        </p>
+        {{ question_card.explanation|raw }}
     {% endif %}
     {% if question_card.sources != null and question_card.sources|length > 0 %}
         <p>
