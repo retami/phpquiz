@@ -30,6 +30,6 @@ echo $funnyDate->d->format('Y-m-d');
 // 2022-02-02
 // 2000-01-01
 // --
-// <quote>When an object is cloned, PHP will perform a <em>shallow copy</em> of all the object's properties. Any properties that are references to other variables will remain references. </quote>
+// <blockquote>When an object is cloned, PHP will perform a <em>shallow copy</em> of all the object's properties. Any properties that are references to other variables will remain references.</blockquote>
 // --
 // www.php.net/manual/en/language.oop5.cloning.php

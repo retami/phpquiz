@@ -14,7 +14,7 @@ echo $y;
 // int(1)
 // --
 // text
-// <quote>Arrow functions support the same features as anonymous functions, except that using variables from the parent scope is always automatic. When a variable used in the expression is defined in the parent scope it will be implicitly captured <em>by-value</em>.</quote>
+// <blockquote>Arrow functions support the same features as anonymous functions, except that using variables from the parent scope is always automatic. When a variable used in the expression is defined in the parent scope it will be implicitly captured <em>by-value</em>.</blockquote>
 // --
 // www.php.net/manual/en/functions.arrow.php
 
