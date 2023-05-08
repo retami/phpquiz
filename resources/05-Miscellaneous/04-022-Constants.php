@@ -4,8 +4,8 @@
 // --
 // What's the difference between defining a constant with <code>define()</code> and the keyword <code>const</code>?
 // --
-// <code>define()</code>:  allows a constant to be defined to an arbitrary expression
-// <code>const</code>: allows a constant to be defined to only scalar (bool, int, float and string) expressions and constant arrays containing only scalar expressions
+// <code>define()</code>  allows a constant to be defined to an arbitrary expression.
+// <code>const</code> allows a constant to be defined to only scalar (bool, int, float and string) expressions and constant arrays containing only scalar expressions.
 //
 // <code>const</code> is handled at compile time, <code>define()</code> at run time.
 // For this reason, a constant cannot be conditionally defined using <code>const</code>, for example.
