@@ -42,9 +42,9 @@ html, html[data-theme='light'] {
     --code-button-color: #{color.adjust(#36454d, $lightness: +10%)};
     --code-line-number-color: #{color.adjust($text-color, $lightness: +20%)};
     --menu-color: #{color.adjust($open-drawer-color, $lightness: +15%)};
-    --clipboard-svg: url('img/clipboard-light.svg');
+    --clipboard-svg: url('../img/clipboard-light.svg');
     --clipboard-click-color: #{$link-color};
-    --hamburger-svg: url('img/hamburger-light.svg');
+    --hamburger-svg: url('../img/hamburger-light.svg');
     --burger-main-color: #97aace;
     --burger-sub-color: #b6cbf1;
 }
@@ -59,9 +59,9 @@ html[data-theme='dark'] {
     --code-button-color: #{color.adjust(#36454d, $lightness: +10%)};
     --code-line-number-color: #{color.adjust($dark-text-color, $lightness: -20%)};
     --menu-color: #{$open-drawer-color};
-    --clipboard-svg: url('img/clipboard-dark.svg');
+    --clipboard-svg: url('../img/clipboard-dark.svg');
     --clipboard-click-color: #eee;
-    --hamburger-svg: url('img/hamburger-dark.svg');
+    --hamburger-svg: url('../img/hamburger-dark.svg');
     --burger-main-color: #2f405b;
     --burger-sub-color: #000000;
 }
