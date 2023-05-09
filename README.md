@@ -1,8 +1,11 @@
-## echo '0' ?: '1';
+## `echo '0' ?: '1'` - PHP quiz
 
 ### Description
 
-Sometimes it's not so much a quiz as a collection of things I find noteworthy.
+Sometimes it's not so much a quiz as a collection of things I find noteworthy in PHP.
+
+Visit [retami.github.io/phpquiz][1]
+
 
 ### Get started
 - Install dependencies
@@ -16,7 +19,7 @@ Sometimes it's not so much a quiz as a collection of things I find noteworthy.
   npm run build
   ```
   
-### Use dynamic site generator
+### Use dynamic site
 - Point your local server to `public` folder, e.g.
 
   ```
@@ -29,8 +32,10 @@ Sometimes it's not so much a quiz as a collection of things I find noteworthy.
   ```
   php -S localhost:80 -t docs/
   ```
-- To update the static HTML files, use
+- To update the static HTML files in the `docs` folder, use
 
   ```
   php ./bin/createstatic.php
   ```
+
+[1]: https://retami.github.io/phpquiz
