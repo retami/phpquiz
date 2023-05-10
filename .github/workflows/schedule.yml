@@ -4,6 +4,9 @@ on:
     push:
         branches: [master]
 
+permissions:
+    contents: write
+
 jobs:
     run-php-script:
         runs-on: ubuntu-latest
