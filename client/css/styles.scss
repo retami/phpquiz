@@ -2,48 +2,42 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500');
 
-$base-color: color.adjust(#2e3440, $lightness: +10%);
-
-$dark-background-color: #0d1117;
-$dark-text-color: #F7F8F8;
-$dark-link-color: color.adjust($dark-text-color, $lightness: -15%);
-
+$base-color: #3d5c6c;
 $background-color: #fff;
 $text-color: #121416;
 $link-color: color.adjust($text-color, $lightness: +10%);
+$open-drawer-color: color.adjust($base-color, $lightness: +40%);
 
-$open-drawer-color: #4D5E67;
-
-:root {
-
-}
-
-html {
-    height: 100%;
-}
-
-html {
-    --open-drawer-color: #{$open-drawer-color};
-    --open-drawer-hover-color: #{color.adjust($open-drawer-color, $lightness: +15%)};
-    --nav-info-background-color: #{color.adjust($open-drawer-color, $lightness: -10%)};
-    --nav-info-text-color: #{$dark-text-color};
-}
+$dark-base-color: #4D5E67;
+$dark-background-color: #0d1117;
+$dark-text-color: #F7F8F8;
+$dark-link-color: color.adjust($dark-text-color, $lightness: -15%);
+$dark-open-drawer-color: color.adjust($dark-base-color, $lightness: -15%);
 
 html, html[data-theme='light'] {
     --background-color: #{$background-color};
     --text-color: #{$text-color};
-    --code-color: #{$text-color}; // #{color.adjust($text-color, $lightness: +10%)};
+    --code-color: #{$text-color};
     --link-color: #{$link-color};
     --em-color: #{color.adjust($text-color, $lightness: +15%)};
-    --code-background-color: #f1f1f1; // #{color.adjust($background-color, $lightness: -20%)};
+
+    --open-drawer-color: #{$open-drawer-color};
+    --open-drawer-hover-color: #{color.adjust($open-drawer-color, $lightness: +10%)};
+    --open-drawer-text-color: #{$text-color};
+
+    --nav-info-background-color: #{color.adjust($open-drawer-color, $lightness: +10%)};
+
+    --code-background-color: #f1f1f1;
     --code-button-color: #{color.adjust(#36454d, $lightness: +10%)};
     --code-line-number-color: #{color.adjust($text-color, $lightness: +20%)};
-    --menu-color: #{color.adjust($open-drawer-color, $lightness: +15%)};
+
+    --menu-color: #{color.adjust($open-drawer-color, $lightness: +10%)};
+
     --clipboard-svg: url('../img/clipboard-light.svg');
     --clipboard-click-color: #{$link-color};
     --hamburger-svg: url('../img/hamburger-light.svg');
-    --burger-main-color: #97aace;
-    --burger-sub-color: #b6cbf1;
+    --burger-main-color: #{$open-drawer-color};
+    --burger-sub-color: #{color.adjust($open-drawer-color, $lightness: +10%)};
 }
 
 html[data-theme='dark'] {
@@ -52,22 +46,34 @@ html[data-theme='dark'] {
     --code-color: #{color.adjust($dark-text-color, $lightness: -10%)};
     --link-color: #{$dark-link-color};
     --em-color: #{color.adjust($dark-text-color, $lightness: -10%)};
-    --code-background-color: #2b2b2b; // #{color.adjust($dark-background-color, $lightness: +8%)};
+
+    --open-drawer-color: #{$dark-open-drawer-color};
+    --open-drawer-hover-color: #{color.adjust($dark-open-drawer-color, $lightness: +5%)};
+    --open-drawer-text-color: #{$dark-text-color};
+
+    --nav-info-background-color: #{color.adjust($dark-open-drawer-color, $lightness: -5%)};
+
+    --code-background-color: #2b2b2b;
     --code-button-color: #{color.adjust(#36454d, $lightness: +10%)};
     --code-line-number-color: #{color.adjust($dark-text-color, $lightness: -20%)};
-    --menu-color: #{$open-drawer-color};
+
+    --menu-color: #{$dark-open-drawer-color};
+
     --clipboard-svg: url('../img/clipboard-dark.svg');
     --clipboard-click-color: #f1f1f1;
     --hamburger-svg: url('../img/hamburger-dark.svg');
-    --burger-main-color: #2f405b;
-    --burger-sub-color: #000000;
+    --burger-main-color: #{color.adjust($dark-open-drawer-color, $lightness: -5%)};
+    --burger-sub-color: #{$dark-open-drawer-color};
+}
+
+html {
+    height: 100%;
 }
 
 html, body {
     border: 0;
     margin: 0;
-    font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
-    // font-family: "Open Sans", serif;
+    font-family: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
     font-size: 100%;
 
     background-color: var(--background-color);
@@ -133,10 +139,20 @@ html, body {
         grid-template-columns: 0 1rem 0 auto 1rem 0;
     }
     #burger {
+        z-index: 3;
         display: inline-block !important;
     }
     html {
         font-size: 90%;
+    }
+
+    div.header {
+        position: relative;
+        z-index: 2;
+        grid-column: 2 / span 4 !important;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+        background-color: var(--background-color) !important;
     }
 }
 
@@ -167,19 +183,22 @@ html, body {
 }
 
 ul#burger_menu {
-    z-index: 1;
+    z-index: 2;
     position: absolute;
-    width: 100%;
+    left: 0;
+    right: 0;
+
     margin: 0;
     padding: 0;
     font-size: 1rem;
     font-weight: 400;
     text-align: center;
 
-    border-bottom: 1px var(--text-color) solid;
+    border-bottom: 1px var(--burger-sub-color) solid;
 
     & > li {
         border-top: 1px $dark-text-color solid;
+        font-weight: 600;
 
         & > div {
             a {
@@ -217,10 +236,11 @@ ul#burger_menu {
         }
     }
 
-    &>li {
-        border-top: 1px $dark-text-color solid;
+    & > li {
+        border-top: 1px var(--burger-sub-color) solid;
     }
-    &>li:first-child {
+
+    & > li:first-child {
         border: none;
     }
 }
@@ -345,7 +365,7 @@ div.content_column {
         margin: 3rem auto 0 auto;
         text-align: center;
         background-color: var(--open-drawer-color);
-        color: $dark-text-color;
+        color: var(--text-color);
 
         &:hover, &[data-opened='1'] {
             background-color: var(--open-drawer-hover-color);
@@ -369,7 +389,7 @@ div.content_column {
         a.nav-arrow-left, a.nav-arrow-right {
             padding: 0.5rem;
             background-color: var(--open-drawer-color);
-            color: $dark-text-color;
+            color: var(--open-drawer-text-color);
 
             &:hover {
                 background-color: var(--open-drawer-hover-color);
@@ -379,7 +399,7 @@ div.content_column {
         .nav-info {
             padding: 0.5rem;
             background-color: var(--nav-info-background-color);
-            color: var(--nav-info-text-color);
+            color: var(--open-drawer-text-color);
         }
     }
 
@@ -464,7 +484,7 @@ div.content_column {
 
 
 @media print {
-    div.menu_column, div.nav-bar, div.header, button.clipboard { // , #open-drawer[data-opened="0"]
+    div.menu_column, div.nav-bar, div.header, button.clipboard {
         display: none !important;
     }
 
@@ -472,7 +492,6 @@ div.content_column {
         margin: 0;
         grid-template-rows: 0 auto;
         grid-template-columns: 1fr 1rem auto auto 1rem 1fr;
-        // grid-template-columns: 0 0 100% 0;
     }
 
     div.content_column {
@@ -483,7 +502,8 @@ div.content_column {
             text-align: left !important;
             background: none !important;
             color: inherit !important;
-            font-weight: bolder;
+            font-weight: normal;
+            text-decoration: underline;
             padding-left: 0 !important;
         }
 
@@ -497,3 +517,17 @@ div.content_column {
     }
 }
 
+
+#overlay {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+}
+
+#overlay.visible {
+    display: block;
+}
