@@ -6,7 +6,7 @@
 // php
 $x = 0b00000011;
 $y = 0b00000101;
-echo sprintf('%08b',(~$x ^ ~$y) << 3) . PHP_EOL; // a
+echo sprintf('%08b', (~$x ^ ~$y) << 3) . PHP_EOL; // a
 
 var_dump(8 >> 3);           // b
 var_dump(0 >> 0);           // c
