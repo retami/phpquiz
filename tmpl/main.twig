@@ -55,7 +55,7 @@
         <ul id="menu_main">
             {% for category in categories %}
                 <li id="{{ category.id }}">
-                    <div class="menuitem open-submenu"><a href="#"><strong>{{ category.title }}</strong></a>
+                    <div class="menuitem open-submenu"><a href="#">{{ category.title }}</a>
                     </div>
                     <ul class="menu_sub"
                         style="{{ question != null and category.id == question.category.id ? '' : 'display:none' }}">
@@ -63,7 +63,7 @@
                             <li id="m{{ item.id }}"
                                 class="{{ question != null and item.id == question.id ? 'menuitem selected' : 'menuitem' }}"
                             ><a class="nav_menu"
-                                href="{{ item.id|url_encode }}"><strong>{{ item.title }}</strong></a>
+                                href="{{ item.id|url_encode }}">{{ item.title }}</a>
                             </li>
                         {% endfor %}
                     </ul>

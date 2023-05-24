@@ -1,7 +1,6 @@
 @use "sass:color";
 
-@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Open+Sans:wght@400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500');
 
 $base-color: color.adjust(#2e3440, $lightness: +10%);
 
@@ -36,7 +35,7 @@ html, html[data-theme='light'] {
     --code-color: #{$text-color}; // #{color.adjust($text-color, $lightness: +10%)};
     --link-color: #{$link-color};
     --em-color: #{color.adjust($text-color, $lightness: +15%)};
-    --code-background-color: #eee; // #{color.adjust($background-color, $lightness: -20%)};
+    --code-background-color: #f1f1f1; // #{color.adjust($background-color, $lightness: -20%)};
     --code-button-color: #{color.adjust(#36454d, $lightness: +10%)};
     --code-line-number-color: #{color.adjust($text-color, $lightness: +20%)};
     --menu-color: #{color.adjust($open-drawer-color, $lightness: +15%)};
@@ -58,7 +57,7 @@ html[data-theme='dark'] {
     --code-line-number-color: #{color.adjust($dark-text-color, $lightness: -20%)};
     --menu-color: #{$open-drawer-color};
     --clipboard-svg: url('../img/clipboard-dark.svg');
-    --clipboard-click-color: #eee;
+    --clipboard-click-color: #f1f1f1;
     --hamburger-svg: url('../img/hamburger-dark.svg');
     --burger-main-color: #2f405b;
     --burger-sub-color: #000000;
@@ -174,7 +173,7 @@ ul#burger_menu {
     margin: 0;
     padding: 0;
     font-size: 1rem;
-    font-weight: 300;
+    font-weight: 400;
     text-align: center;
 
     border-bottom: 1px var(--text-color) solid;
@@ -203,7 +202,7 @@ ul#burger_menu {
 
     ul.menu_sub {
         font-size: 0.95rem;
-        font-weight: 300;
+        font-weight: 400;
         padding: 0;
         border: none;
 
@@ -251,13 +250,17 @@ div.menu_column {
 
     ul#menu_main {
         font-size: 1rem;
-        font-weight: 300;
+        font-weight: 400;
         padding: 0;
         border-left: 1px solid var(--menu-color);
 
+        div.open-submenu > a {
+            font-weight: 600;
+        }
+
         ul.menu_sub {
             font-size: 0.85rem;
-            font-weight: 300;
+            font-weight: 400;
             margin: 0;
             padding: 0.5rem 0 0.5rem;
         }
@@ -294,10 +297,12 @@ div.content_column {
     }
 
     code {
-        font-size: 0.85em;
+        //font-size: 0.87rem;
+        //line-height: 1.4rem;
+        font-size: 0.95rem;
         line-height: 1.4rem;
-        font-family: 'JetBrains Mono', monospace;
-        font-variant-ligatures: no-contextual;
+        font-family: 'Inconsolata', monospace; // 'JetBrains Mono'
+        font-weight: 500;
         background-color: var(--code-background-color);
         color: var(--code-color);
 
