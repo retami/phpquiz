@@ -25,8 +25,9 @@ const config = {
     plugins: [
         new CopyPlugin({
             patterns: [
-                { from: "client/favicons", to: 'favicons' },
-                { from: "client/img", to: 'img' },
+                {from: "client/favicons", to: 'favicons'},
+                {from: "client/favicon.ico", to: 'favicon.ico'},
+                {from: "client/img", to: 'img'},
             ],
         }),
     ],
